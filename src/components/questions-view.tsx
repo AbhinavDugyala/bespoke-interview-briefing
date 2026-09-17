@@ -52,7 +52,7 @@ export function QuestionsView({ filter }: { filter: (typeof FILTERS)[number] }) 
     <PageShell
       kicker="Question bank"
       title="Answer the first sentence, then go specific."
-      lede="Starred questions are the ones a behavioural RL-task interview almost always hits. Open one, say the gold line, then the spoken block. Do not read paragraphs on the call."
+      lede="Starred questions are the ones a behavioural RL-task interview almost always hits. Dynamo first. Notebook and GERD are in here for 'what did you build' and 'do you have ML.' Do not read paragraphs on the call."
     >
       <div className="flex flex-wrap gap-1.5">
         {FILTERS.map((f) => {

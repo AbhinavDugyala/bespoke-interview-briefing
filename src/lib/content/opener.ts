@@ -2,18 +2,18 @@ export const NINETY_SECOND_OPENER = `I'm Abhinav. Day to day I author Terminal-B
 
 That work is the same loop this role describes. I take a real engineering problem, package it as a Harbor task — Docker environment, instruction, hidden golden solution, hidden verifier — then I prove two things empirically: the oracle scores reward 1.0, a no-op scores 0, and a frontier agent fails for a valid reason, not a timeout or an ambiguous spec.
 
-I decide what the agent should be asked, how success is checked, how to make the task hard without making it unfair, and how to close reward-hacking holes: answer leakage in the image, tests that only check file existence, symlink cheats, hidden conventions the instruction never stated.
+I have also shipped a MERN notebook with JWT auth and notes CRUD, and I first-authored a CNN study on GERD endoscopy — Deep Gastro Insight — where GoogLeNet reached 91.2% on 10,662 images. Those show I can build a multi-file app and run a real train-and-compare loop. The work that matches this role is still Dynamo.
 
 Bespoke is a core contributor to Terminal-Bench and Harbor. I already work in that stack. I want to do it with your research team, on environments that are used to train agents, not only to score them.`;
 
 export const TONIGHT_PLAN = [
   {
     when: "Now → 90 min before Meet",
-    what: "Read Tonight, JD match, and both stories out loud once. Fill your numbers on this page.",
+    what: "Read Tonight, JD match, Stories, and Projects out loud once. Fill your numbers on this page.",
   },
   {
     when: "90 → 30 min before",
-    what: "Drill the eight starred questions. If you stall, say the first sentence from the script, then go specific.",
+    what: "Drill starred questions. Dynamo first. Notebook and GERD only if they ask what you built or about ML.",
   },
   {
     when: "Last 30 min",
@@ -43,8 +43,12 @@ export const MUST_MEMORIZE = [
     line: "tests/ and solution/ are not in the agent image. Harbor mounts them at grade time. Ground truth never lives on an agent-writable path.",
   },
   {
-    term: "Eval vs RL env",
-    line: "Same packaging. Different use. A benchmark measures. An RL environment trains. Training makes reward hacking worse because the policy will search the grader.",
+    term: "myNoteBook",
+    line: "MERN notes app. JWT + bcrypt + Joi. Per-user CRUD. Use when they ask what you built, not as the lead.",
+  },
+  {
+    term: "Deep Gastro Insight",
+    line: "First-author CNN paper. 10,662 endoscopic images. GoogLeNet 91.2% vs VGG19, MobileNet, Sequential. Keras, not RL.",
   },
 ] as const;
 
@@ -54,7 +58,9 @@ export const DO_NOT_SAY = [
   "I have three years of production PyTorch training at cluster scale.",
   "I built Terminal-Bench / Harbor myself.",
   "Difficulty is when the model cannot finish in time.",
-  "The verifier just checks that the output file exists.",
+  "The notebook is my main project for this role.",
+  "I trained production medical AI that hospitals use.",
+  "I have trained PPO at cluster scale in PyTorch.",
 ] as const;
 
 export const INSTEAD_SAY = [
@@ -64,4 +70,6 @@ export const INSTEAD_SAY = [
   "I author Harbor / Terminal-Bench 2 tasks in the same format Bespoke helped define.",
   "If all five trials time out, the timeout is wrong. If they finish and miss the crux, the task is hard.",
   "Every instruction criterion maps 1:1 to a hidden assertion on observable artifacts.",
+  "I shipped myNoteBook, a MERN notes app with JWT, bcrypt, and per-user CRUD. That is how I know what a realistic multi-file repo looks like when I plant a Harbor task in one.",
+  "I first-authored Deep Gastro Insight: Keras CNNs on 10,662 endoscopic images, GoogLeNet 91.2% on a held-out comparison. That is train-and-eval, not cluster RL.",
 ] as const;

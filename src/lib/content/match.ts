@@ -8,8 +8,8 @@ export type JdItem = {
 export const MUST_HAVES: JdItem[] = [
   {
     jd: "3+ years software/ML engineering with strong production Python",
-    you: "Production Python is real: Harbor tasks, Dockerfiles, pytest verifiers, bash oracles. Calendar years may be under 3. Do not inflate.",
-    say: "My Python is in the evaluation stack, not in training loops. I write deterministic graders and package environments that actually run. If you need cluster-scale PyTorch, that is a ramp, not my current job.",
+    you: "Production Python is real: Harbor tasks, Dockerfiles, pytest verifiers, bash oracles. Supporting: Keras CNN study + a MERN notebook in JS. Calendar years may be under 3. Do not inflate.",
+    say: "My production Python is in the evaluation stack: Docker, Harbor, pytest verifiers. I have also trained Keras CNNs and shipped a MERN app. If you need cluster-scale PyTorch PPO on day one, that is a ramp, not my current job.",
     strength: "partial",
   },
   {
@@ -51,6 +51,18 @@ export const MUST_HAVES: JdItem[] = [
 ];
 
 export const NICE_TO_HAVES: JdItem[] = [
+  {
+    jd: "Deep learning: training loops, architecture comparison, held-out eval",
+    you: "Deep Gastro Insight (first author, IJSDR Apr 2025): Sequential CNN vs VGG19 vs MobileNet vs GoogLeNet on 10,662 endoscopic images. GoogLeNet 91.2%. Keras, not PyTorch RL.",
+    say: "I have run a real train-and-compare loop. Four architectures, same split, held-out metric. GoogLeNet won at 91.2%. I will not claim cluster RL. I will claim I do not trust a training curve without a held-out number — same instinct as a Harbor verifier.",
+    strength: "partial",
+  },
+  {
+    jd: "Comfort in multi-file application code: APIs, auth, UI, realistic bugs",
+    you: "myNoteBook (Jun–Aug 2024): Express + Mongo + React, JWT, bcrypt, Joi, per-user notes CRUD. Public on GitHub.",
+    say: "I shipped a notes app with a real auth contract — hashed passwords, JWT on every notes call, 401 without it. That is the shape of repo I plant Harbor tasks in, so I know which bugs are realistic and which checks an agent will skip.",
+    strength: "strong",
+  },
   {
     jd: "Hands-on task authorship with a track record (counts, acceptance rate)",
     you: "You have authorship. Fill exact submitted / RTD / revise counts tonight. Do not guess on the call.",

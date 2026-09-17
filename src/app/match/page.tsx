@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { PageShell, SpeakBlock } from "@/components/page-shell";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -65,6 +66,24 @@ export default function MatchPage() {
               </ul>
             </div>
           ))}
+          {PROFILE.projects.map((project) => (
+            <div key={project.title} className="border-t border-border pt-3">
+              <p className="font-medium">{project.title}</p>
+              <p className="text-xs text-muted-foreground">{project.when}</p>
+              <ul className="mt-2 list-disc space-y-1 pl-5 text-muted-foreground">
+                {project.bullets.map((b) => (
+                  <li key={b}>{b}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+          <p className="border-t border-border pt-3 text-sm text-muted-foreground">
+            Spoken scripts:{" "}
+            <Link href="/projects" className="text-primary underline-offset-4 hover:underline">
+              Projects
+            </Link>
+            .
+          </p>
         </CardContent>
       </Card>
 

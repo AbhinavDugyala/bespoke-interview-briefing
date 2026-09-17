@@ -20,6 +20,8 @@ export const PROFILE = {
     "Coding-agent benchmarks",
     "Harbor / Terminal-Bench 2",
     "pytest verifiers",
+    "MERN / REST / JWT",
+    "TensorFlow / Keras / CNNs",
   ],
   roles: [
     {
@@ -57,7 +59,25 @@ export const PROFILE = {
       org: "OP, TechnoHacks, and similar",
       when: "Earlier",
       bullets: [
-        "Python, React/Node, SQL. Enough to talk about shipping code, not the main interview story.",
+        "Python and web. Supporting evidence only — the projects worth naming are myNoteBook and Deep Gastro Insight.",
+      ],
+    },
+  ],
+  projects: [
+    {
+      title: "myNoteBook (MERN)",
+      when: "Jun 2024 – Aug 2024",
+      bullets: [
+        "Private cloud notebook: register/login, then create, read, update, delete notes.",
+        "Express + MongoDB API with JWT, bcrypt, Joi; React frontend with dedicated create/edit flows.",
+      ],
+    },
+    {
+      title: "Deep Gastro Insight — GERD CNNs",
+      when: "Jan 2025 – Apr 2025 · IJSDR",
+      bullets: [
+        "First-author paper classifying GERD-related endoscopic images.",
+        "10,662 images; Sequential CNN vs VGG19 vs MobileNet vs GoogLeNet; GoogLeNet 91.2%.",
       ],
     },
   ],

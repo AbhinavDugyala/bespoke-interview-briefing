@@ -17,7 +17,7 @@ export const STORIES: Story[] = [
     title: "Project Dynamo — authoring a Harbor / Terminal-Bench 2 task",
     subtitle: "Lead with this. It is the job.",
     whenToUse:
-      "Tell me about yourself / walk me through a project / how do you design a task.",
+      "Tell me about yourself / walk me through a project / how do you design a task. Personal apps (notebook, GERD) are on Projects — not this story.",
     situation:
       "At Handshake I author Terminal-Bench 2 tasks on Project Dynamo. Each task is a self-contained Harbor environment: a Docker world, an instruction the agent sees, a hidden oracle, and a hidden verifier that writes a 0/1 reward. Frontier labs use this format to measure coding agents. Bespoke is a core contributor to that stack.",
     task: "Ship a task that is original, deterministically graded, solvable by a skilled engineer, and hard for a frontier agent — without being unfair.",

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { PageShell, SpeakBlock } from "@/components/page-shell";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -6,9 +7,9 @@ import { STORIES } from "@/lib/content/stories";
 export default function StoriesPage() {
   return (
     <PageShell
-      kicker="Two projects, plus a backup"
+      kicker="Two Dynamo stories, plus a backup"
       title="Go deep on Dynamo. Keep Turing/Deccan in your pocket."
-      lede="They asked you to have one or two projects ready. Story 1 is the environment. Story 2 is the verifier. If they ask about older roles, use the backup and return to Dynamo."
+      lede="They asked you to have one or two projects ready. Story 1 is the environment. Story 2 is the verifier. myNoteBook and Deep Gastro Insight are range — they live on Projects, two minutes each, then back here."
     >
       {STORIES.map((story, i) => (
         <article key={story.id} className="space-y-4">
@@ -70,6 +71,13 @@ export default function StoriesPage() {
           </div>
         </article>
       ))}
+      <p className="text-sm text-muted-foreground">
+        For range, not the flagship:{" "}
+        <Link href="/projects" className="text-primary underline-offset-4 hover:underline">
+          myNoteBook and Deep Gastro Insight
+        </Link>
+        .
+      </p>
     </PageShell>
   );
 }

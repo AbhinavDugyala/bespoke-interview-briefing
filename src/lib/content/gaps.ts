@@ -7,7 +7,7 @@ export const GAPS = [
   {
     gap: "PyTorch training loops, SLURM, Ray, GRPO/PPO",
     handle:
-      "I have not trained policies at scale. I have built the environments those recipes consume. I can read a paper and implement a verifier faster than I can stand up a cluster — and this role is the former.",
+      "I have trained Keras CNNs (Deep Gastro Insight: GoogLeNet 91.2% on 10,662 images). I have not trained policies at scale in PyTorch. I have built the environments those recipes consume. I can read a paper and implement a verifier faster than I can stand up a cluster — and this role is the former.",
   },
   {
     gap: "OpenEnv / Prime-RL hands-on",
@@ -23,6 +23,11 @@ export const GAPS = [
     gap: "Public task count / accepted TB tasks with my name on them",
     handle:
       "Dynamo work is typically not a public GitHub flex. Bring private numbers: submitted, RTD, revise rate. If you have a sanitized task you can describe, use it.",
+  },
+  {
+    gap: "Production medical AI / hospital-deployed models",
+    handle:
+      "Deep Gastro Insight is a student paper, not FDA or a clinic. Claim the train/compare/report loop. Do not claim 91.2% is clinical-grade.",
   },
   {
     gap: "SWE-bench instance authorship",
@@ -57,6 +62,7 @@ export const ASK_THEM = [
 export const NIGHT_BEFORE_CHECKLIST = [
   "Fill the Numbers panel with real counts. If you do not know a number, say 'I will follow up' — do not invent it live.",
   "Pick one Dynamo task you can narrate without notes: category, what the agent sees, the crux, how you graded, what pass@ looked like.",
+  "Skim Projects once: myNoteBook for 'what you built,' GERD for ML. Two minutes each, then back to Dynamo.",
   "Rehearse the 90-second opener twice out loud. Time it.",
   "Prepare the years-gap answer once so you are not defensive.",
   "Write 3 questions from the ask list on paper.",

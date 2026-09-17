@@ -17,10 +17,12 @@ export const QUESTIONS: Question[] = [
     firstLine: "I'm Abhinav — I author Harbor tasks for coding agents on Handshake Dynamo.",
     spoken: `I'm Abhinav. I'm an AI evaluation specialist at Handshake on Project Dynamo, where I author Terminal-Bench 2 tasks for coding agents.
 
-Before that I did model-output evaluation at Turing and Deccan AI, so I have been on the expert-network side of frontier data for a while. The work that matches this role is Dynamo: I design the task, the Docker world, the hidden golden, and the hidden verifier, then I calibrate difficulty against a frontier agent.
+Before that I did model-output evaluation at Turing and Deccan AI. On my own time I shipped a MERN notebook with JWT auth, and I first-authored a CNN paper on GERD endoscopy — GoogLeNet at 91.2% on 10,662 images. Those show I can build a repo and run a train-and-compare loop.
+
+The work that matches this role is still Dynamo: I design the task, the Docker world, the hidden golden, and the hidden verifier, then I calibrate difficulty against a frontier agent.
 
 I am here because Bespoke is a core contributor to Terminal-Bench and Harbor, and you use that stack to train agents, not only to score them. That is the work I already do, pointed at RL.`,
-    ifStuck: "Present → past → why Bespoke. Do not list every internship.",
+    ifStuck: "Present → projects in one breath → Dynamo → why Bespoke. Do not list internships.",
   },
   {
     id: "project-deep",
@@ -28,7 +30,9 @@ I am here because Bespoke is a core contributor to Terminal-Bench and Harbor, an
     category: "opener",
     q: "Pick one project and go deep.",
     firstLine: "Dynamo. Four files have to describe the same task.",
-    spoken: `I'll go deep on a Dynamo task, end to end.
+    spoken: `If they want range, I have a MERN notebook and a published CNN study. If they want the job, I go deep on Dynamo.
+
+I'll go deep on a Dynamo task, end to end.
 
 I start with a proposal: what is hard, how an expert would solve it, how a program checks the artifact. Then I write the oracle — the golden solution — before I write the prompt, because the artifacts the oracle produces are the spec.
 
@@ -296,8 +300,42 @@ I already work in GitHub, Docker, and review loops on my own clock. I can protec
 
 What I do have is the scarce part of this job: I already design Harbor tasks, write verifiers against reward hacks, and calibrate difficulty on a frontier coding agent. Most three-year backend engineers have not done that.
 
+The supporting evidence is concrete. I shipped myNoteBook — JWT, bcrypt, per-user notes CRUD — so I know what a multi-file app feels like when I plant a task in one. I first-authored Deep Gastro Insight: Keras CNNs, 10,662 images, GoogLeNet 91.2% against three other architectures on a held-out split. That is a real train-and-compare loop. It is not PyTorch PPO on a cluster.
+
 If you need someone to stand up a SLURM training loop on day one, that is not me yet. If you need someone who can look at a repo and decide what an agent should be asked to do, and how you would know it succeeded, that is my current work.`,
-    ifStuck: "Don't inflate. Trade years for task-design reps.",
+    ifStuck: "Don't inflate. Trade years for Dynamo reps, then name notebook + GERD as range.",
+  },
+  {
+    id: "notebook-built",
+    star: true,
+    category: "opener",
+    q: "Walk me through something you built — a real app, not a benchmark task.",
+    firstLine: "myNoteBook: MERN notes app, JWT auth, per-user CRUD. Then return to Dynamo.",
+    spoken: `The app I shipped is myNoteBook, a cloud notebook I built in summer 2024.
+
+A user registers, logs in, and keeps private notes. React on the front. Express plus MongoDB on the back. REST for auth and for notes.
+
+The contract is the interesting part. Register and login are Joi-validated. Passwords are bcrypt hashes. Every notes call needs a JWT in the auth-token header or it is 401. Create, read, update, delete are scoped to that user.
+
+Why it matters here: when I author a Harbor task I am planting work inside a real multi-file app — routes, middleware, models, a UI. I have built that shape, so I know which bugs are realistic and which checks an agent will try to skip.
+
+I would not lead with this. Dynamo is the job. This is the proof I can live in a repo.`,
+    ifStuck: "Auth → JWT → per-user CRUD → 'same instinct as hidden tests.' Stop. Do not demo the UI.",
+  },
+  {
+    id: "gerd-ml",
+    star: true,
+    category: "eval-rl",
+    q: "Do you have ML / training / held-out evaluation experience?",
+    firstLine: "Yes — Keras CNNs, published. GoogLeNet 91.2% on 10,662 images. Not cluster RL.",
+    spoken: `The ML project on the table is Deep Gastro Insight, a CNN study I first-authored for GERD diagnosis from endoscopic images.
+
+We trained on 10,662 labeled frames. We did not ship one model. We compared a Sequential CNN against transfer-learned VGG19, MobileNet, and GoogLeNet, with augmentation so we were not fitting to scope lighting.
+
+GoogLeNet was best on the evaluation set, 91.2%. That number only matters because it beat the other three under the same split. If I only quoted training accuracy, I would be cheating the same way a loose Harbor verifier cheats.
+
+This is Keras and computer vision, not PPO on 10k GPUs. What transfers is the eval instinct: held-out data, a baseline, a fair comparison, and not confusing a pretty training curve with a real result.`,
+    ifStuck: "10,662 images. Four models. GoogLeNet 91.2%. Keras, not PyTorch RL. Paper is IJSDR April 2025.",
   },
 ];
 

@@ -12,13 +12,14 @@ import {
   TONIGHT_PLAN,
 } from "@/lib/content/opener";
 import { INTERVIEW } from "@/lib/content/meta";
+import { PROJECTS, PROJECTS_RULE } from "@/lib/content/projects";
 
 export default function HomePage() {
   return (
     <PageShell
       kicker={`${INTERVIEW.company} · ${INTERVIEW.role}`}
       title="This interview is the job you already do, pointed at training."
-      lede="Conversational and behavioural. They want one or two projects in detail, and they will steer into RL task design. Lead with Dynamo. Do not lead with internships."
+      lede="Conversational and behavioural. They want one or two projects in detail, and they will steer into RL task design. Lead with Dynamo. Use the notebook and GERD paper for range — not as the flagship."
     >
       <div className="flex flex-wrap items-center gap-2">
         <Badge>Google Meet</Badge>
@@ -46,7 +47,7 @@ export default function HomePage() {
 
       <section>
         <h2 className="font-serif text-2xl">
-          Six sentences you should be able to say without notes
+          Sentences you should be able to say without notes
         </h2>
         <div className="mt-4 grid gap-3">
           {MUST_MEMORIZE.map((item) => (
@@ -94,14 +95,42 @@ export default function HomePage() {
         </Card>
       </div>
 
+      <section>
+        <h2 className="font-serif text-2xl">Range — two minutes each, then back</h2>
+        <p className="mt-1 mb-4 text-sm text-muted-foreground">{PROJECTS_RULE}</p>
+        <div className="grid gap-4 md:grid-cols-2">
+          {PROJECTS.map((project) => (
+            <Card key={project.id}>
+              <CardHeader>
+                <CardTitle className="text-base leading-snug">{project.title}</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3 text-sm leading-relaxed text-muted-foreground">
+                <p>{project.oneLiner}</p>
+                <p className="text-xs text-primary">{project.whenToUse}</p>
+                <Link
+                  href="/projects"
+                  className="inline-block text-primary underline-offset-4 hover:underline"
+                >
+                  Full script and follow-ups
+                </Link>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+
       <p className="text-sm text-muted-foreground">
         Next:{" "}
         <Link href="/match" className="text-primary underline-offset-4 hover:underline">
           map the JD to Dynamo
         </Link>
-        , then{" "}
+        ,{" "}
         <Link href="/stories" className="text-primary underline-offset-4 hover:underline">
           rehearse the two stories
+        </Link>
+        , then{" "}
+        <Link href="/projects" className="text-primary underline-offset-4 hover:underline">
+          notebook and GERD
         </Link>
         .
       </p>

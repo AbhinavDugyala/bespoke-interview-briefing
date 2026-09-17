@@ -4,6 +4,8 @@ Same-day prep for **Dugyala Abhinav**'s Machine Learning Engineer conversation a
 
 The interview is a behavioural call about **RL task design for coding agents**. The app turns that JD into spoken answers mapped onto Handshake **Project Dynamo** work: Harbor tasks, Terminal-Bench 2 environments, hidden oracles, pytest verifiers, pass@k, and reward hacking.
 
+Personal range is on **Projects**: **myNoteBook** (MERN notes app, JWT/bcrypt/Joi) and **Deep Gastro Insight** (first-author GERD CNN study, GoogLeNet 91.2% on 10,662 images). Lead with Dynamo. Use those two when they ask what you built or about ML.
+
 ## Run locally
 
 Needs Node 20+ and npm.
@@ -21,6 +23,7 @@ Open [http://127.0.0.1:43147](http://127.0.0.1:43147). Use the production server
 | `/` | 90-second opener, countdown, numbers to fill |
 | `/match` | JD line-by-line mapped to Dynamo |
 | `/stories` | Two STAR stories plus a Turing/Deccan backup |
+| `/projects` | myNoteBook (full stack) and Deep Gastro Insight (ML research) |
 | `/questions` | Starred question bank with spoken answers |
 | `/playbook` | Harbor anatomy, stump patterns, RL vocab |
 | `/gaps` | Honest gaps and questions to ask them |
@@ -33,7 +36,8 @@ Numbers you type on Tonight stay in **localStorage** on that browser only.
 1. Fill submitted / accepted task counts and the one task you will narrate.
 2. Read the opener out loud twice.
 3. Rehearse Stories 1 and 2.
-4. Drill the starred questions. Stop adding new material 30 minutes before Meet.
+4. Skim Projects once so notebook and GERD are ready if they ask for range.
+5. Drill the starred questions. Stop adding new material 30 minutes before Meet.
 
 ## Honest source note
 
