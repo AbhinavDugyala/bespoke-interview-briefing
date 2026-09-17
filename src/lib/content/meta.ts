@@ -17,6 +17,7 @@ export const NAV = [
   { href: "/", label: "Tonight" },
   { href: "/match", label: "JD match" },
   { href: "/stories", label: "Two stories" },
+  { href: "/walkthrough", label: "How I ship" },
   { href: "/projects", label: "Projects" },
   { href: "/questions", label: "Questions" },
   { href: "/playbook", label: "Playbook" },

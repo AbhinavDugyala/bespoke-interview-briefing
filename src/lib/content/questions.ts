@@ -39,7 +39,55 @@ I start with a proposal: what is hard, how an expert would solve it, how a progr
 The agent never sees tests or the golden. Harbor mounts them after the run. I require oracle reward 1.0 and nop reward 0. Then CI runs a reference agent. I want valid failures in a low pass@5 band.
 
 The interesting part is the crux. I will pick one from a task I actually shipped — a held-out case the sample does not show, or a wrong-default lure that almost matches the true rule. That is what separates a task that looks solvable from one that actually is.`,
-    ifStuck: "Swap in your real task name, input, output path, and the one case the model missed.",
+    ifStuck: "Swap in your real task name, input, output path, and the one case the model missed. Full 60-second script is on How I ship.",
+  },
+  {
+    id: "dynamo-60s",
+    star: true,
+    category: "design",
+    q: "Walk me through how you actually build a Dynamo task, step by step.",
+    firstLine: "Problem, world, Dockerfile, oracle, tests, instruction last, then oracle=1 and nop=0.",
+    spoken: `On Dynamo I do not start from a prompt. I ship a Terminal-Bench 2 Harbor task — one folder that is an exam.
+
+I pick a real engineering problem that needs more than one command: a broken pipeline, a parser, a CLI. Original fixtures. A skilled engineer can still solve it. A program can grade it.
+
+Then seven files, in this order. Fixtures in environment/. Digest-pinned Dockerfile, no COPY of solution or tests. Oracle first — solution/solve.sh actually computes into /app. Pytest that grades those artifacts, 1:1 with the spec. instruction.md last: what, not how, absolute /app paths, every graded rule named.
+
+Harbor is the exam hall. The agent sees the room and the instruction, works in /app, then tests mount after it stops and write 1 or 0 to reward.txt.
+
+I do not submit until oracle is 1.0 and a no-op is 0. Then Dynamo's gates: static checks, AVA, pass@5 on GPT-5.4 with Terminus-2. Timeouts are not difficulty. If the agent solves it three of five, I add a held-out crux, not a shorter clock.
+
+That is one task, start to ready-to-deliver. I will swap in the task I filled on Tonight — category, input path, output path, the one fair miss.`,
+    ifStuck: "Seven beats: problem → world → Docker → oracle → tests → instruction → prove. Then your fill-in.",
+  },
+  {
+    id: "tb2-any",
+    star: true,
+    category: "design",
+    q: "How would you author a new Terminal-Bench 2 task from scratch?",
+    firstLine: "Same exam. Harbor builds the room. Agent sees the prompt. Tests mount after. Oracle first, instruction last.",
+    spoken: `A Terminal-Bench 2 task is an exam in a Docker room. Harbor is the invigilator.
+
+Harbor builds the image from environment/Dockerfile. The agent gets only instruction.md. It works in /app, reads fixtures, writes artifacts. When it stops, Harbor mounts tests/ — never before — runs tests/test.sh, pytest writes 1 or 0 to /logs/verifier/reward.txt. The oracle, solution/solve.sh, is mounted only when I prove solvability. The agent never sees it.
+
+How I would author any task, including the ones I ship on Dynamo:
+
+One — pick a real problem. Multi-step. Original data. Not trivia, not a reskin of an existing TB task. A skilled engineer can solve it. A program can check the artifact.
+
+Two — plan environment/. Data, docs, maybe broken starter code. Never put solution/ or tests/ in the image. That is answer leakage.
+
+Three — Dockerfile. Digest-pin the base, never latest. COPY fixtures into /app. mkdir /app/output. Bake pytest. WORKDIR /app. If internet is off, every dep is already in the image.
+
+Four — oracle first. solve.sh does real work into absolute /app paths. Same fixtures, same output, every run. No echoing a hardcoded answer.
+
+Five — tests 1:1 with the spec. Every assertion traces to a sentence in instruction.md or a /app/docs file named there. test.sh must not apt-get. It writes reward.txt.
+
+Six — instruction last. Concise. What, not how. Absolute /app paths. Every deliverable named: paths, keys, types, sort order. No algorithm dump. Timeout line matches task.toml.
+
+Seven — prove it. Oracle 1. Nop 0. Rerun from a clean tree. Then on Dynamo: static, AVA, pass@5. If spelling out a missing rule makes the task easy, I never had a crux — I had a defect.
+
+That is the method for any TB2 task. Only the problem and the crux change.`,
+    ifStuck: "Exam metaphor, then seven steps, then oracle 1 / nop 0 / pass@k. Stop.",
   },
   {
     id: "hard-not-unsolvable",

@@ -23,6 +23,7 @@ Open [http://127.0.0.1:43147](http://127.0.0.1:43147). Use the production server
 | `/` | 90-second opener, countdown, numbers to fill |
 | `/match` | JD line-by-line mapped to Dynamo |
 | `/stories` | Two STAR stories plus a Turing/Deccan backup |
+| `/walkthrough` | 30–60s Dynamo steps and a 1–2 min any-TB2-task script |
 | `/projects` | myNoteBook (full stack) and Deep Gastro Insight (ML research) |
 | `/questions` | Starred question bank with spoken answers |
 | `/playbook` | Harbor anatomy, stump patterns, RL vocab |
@@ -38,8 +39,9 @@ The layout is built for phone, tablet, and desktop: wrapping nav with 44px tap t
 1. Fill submitted / accepted task counts and the one task you will narrate.
 2. Read the opener out loud twice.
 3. Rehearse Stories 1 and 2.
-4. Skim Projects once so notebook and GERD are ready if they ask for range.
-5. Drill the starred questions. Stop adding new material 30 minutes before Meet.
+4. Read How I ship: 60-second Dynamo steps, then the 1–2 minute any-TB2 script. Fill Tonight so the 60 seconds is your task.
+5. Skim Projects once so notebook and GERD are ready if they ask for range.
+6. Drill the starred questions. Stop adding new material 30 minutes before Meet.
 
 ## Honest source note
 

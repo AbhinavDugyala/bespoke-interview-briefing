@@ -128,6 +128,10 @@ export default function HomePage() {
         <Link href="/stories" className="text-primary underline-offset-4 hover:underline">
           rehearse the two stories
         </Link>
+        ,{" "}
+        <Link href="/walkthrough" className="text-primary underline-offset-4 hover:underline">
+          the 60-second Dynamo walkthrough
+        </Link>
         , then{" "}
         <Link href="/projects" className="text-primary underline-offset-4 hover:underline">
           notebook and GERD

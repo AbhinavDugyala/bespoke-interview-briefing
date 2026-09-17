@@ -9,7 +9,7 @@ Bespoke is a core contributor to Terminal-Bench and Harbor. I already work in th
 export const TONIGHT_PLAN = [
   {
     when: "Now → 90 min before Meet",
-    what: "Read Tonight, JD match, Stories, and Projects out loud once. Fill your numbers on this page.",
+    what: "Read Tonight, JD match, Stories, How I ship, and Projects out loud once. Fill your numbers on this page.",
   },
   {
     when: "90 → 30 min before",
@@ -17,7 +17,7 @@ export const TONIGHT_PLAN = [
   },
   {
     when: "Last 30 min",
-    what: "Stop adding material. Rehearse the 90-second opener twice. Write three questions you will ask them. Water, quiet room, Meet link ready.",
+    what: "Stop adding material. Rehearse the 90-second opener and the 60-second Dynamo walkthrough twice. Write three questions you will ask them. Water, quiet room, Meet link ready.",
   },
 ] as const;
 

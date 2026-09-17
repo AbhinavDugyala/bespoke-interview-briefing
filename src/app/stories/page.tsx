@@ -9,7 +9,7 @@ export default function StoriesPage() {
     <PageShell
       kicker="Two Dynamo stories, plus a backup"
       title="Go deep on Dynamo. Keep Turing/Deccan in your pocket."
-      lede="They asked you to have one or two projects ready. Story 1 is the environment. Story 2 is the verifier. myNoteBook and Deep Gastro Insight are range — they live on Projects, two minutes each, then back here."
+      lede="They asked you to have one or two projects ready. Story 1 is the environment. Story 2 is the verifier. For a 30–60 second step-by-step of how you ship a task, use How I ship. myNoteBook and Deep Gastro Insight are range."
     >
       {STORIES.map((story, i) => (
         <article key={story.id} className="space-y-4">

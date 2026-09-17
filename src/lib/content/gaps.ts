@@ -62,6 +62,7 @@ export const ASK_THEM = [
 export const NIGHT_BEFORE_CHECKLIST = [
   "Fill the Numbers panel with real counts. If you do not know a number, say 'I will follow up' — do not invent it live.",
   "Pick one Dynamo task you can narrate without notes: category, what the agent sees, the crux, how you graded, what pass@ looked like.",
+  "Read How I ship once out loud: 60 seconds for a Dynamo task you wrote, 1–2 minutes for any TB2 task.",
   "Skim Projects once: myNoteBook for 'what you built,' GERD for ML. Two minutes each, then back to Dynamo.",
   "Rehearse the 90-second opener twice out loud. Time it.",
   "Prepare the years-gap answer once so you are not defensive.",

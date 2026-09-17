@@ -69,8 +69,12 @@ if (typeof window !== "undefined") {
   memory = readStorage();
 }
 
+export function useBriefingStats() {
+  return useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
+}
+
 export function NumbersPanel() {
-  const stats = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
+  const stats = useBriefingStats();
 
   const setField = useCallback((key: keyof Stats, value: string) => {
     write({ ...memory, [key]: value });
