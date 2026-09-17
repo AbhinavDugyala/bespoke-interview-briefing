@@ -10,10 +10,11 @@ Needs Node 20+ and npm.
 
 ```bash
 npm install
-npm run dev
+npm run build
+npm start
 ```
 
-Open [http://127.0.0.1:43147](http://127.0.0.1:43147).
+Open [http://127.0.0.1:43147](http://127.0.0.1:43147). Use the production server (`npm start`) so every page is already compiled. `npm run dev` compiles each route on first click and feels slow.
 
 | Route | Use it for |
 | --- | --- |
