@@ -9,7 +9,10 @@ export function NavLinks() {
   const pathname = usePathname();
 
   return (
-    <nav className="-mx-4 flex gap-1 overflow-x-auto px-4 pb-1 lg:mx-0 lg:px-0 lg:pb-0">
+    <nav
+      aria-label="Briefing sections"
+      className="flex flex-wrap gap-1.5"
+    >
       {NAV.map((item) => {
         const active =
           item.href === "/"
@@ -21,10 +24,10 @@ export function NavLinks() {
             href={item.href}
             prefetch
             className={cn(
-              "shrink-0 rounded-full px-3 py-1.5 text-sm transition-colors",
+              "inline-flex min-h-11 shrink-0 items-center rounded-full px-3.5 text-sm transition-colors",
               active
                 ? "bg-primary text-primary-foreground"
-                : "text-muted-foreground hover:bg-secondary hover:text-foreground"
+                : "bg-secondary/60 text-muted-foreground hover:bg-secondary hover:text-foreground"
             )}
           >
             {item.label}

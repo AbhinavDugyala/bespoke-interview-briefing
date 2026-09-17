@@ -20,15 +20,15 @@ export function isFilter(value: string | undefined): value is (typeof FILTERS)[n
 
 function QuestionCard({ item }: { item: Question }) {
   return (
-    <details className="group rounded-2xl border border-border bg-card/50 p-4 open:border-primary/30">
+    <details className="group min-w-0 rounded-2xl border border-border bg-card/50 p-4 open:border-primary/30">
       <summary className="cursor-pointer list-none">
-        <div className="flex flex-wrap items-center gap-2">
+        <div className="flex min-h-11 flex-wrap items-center gap-2">
           {item.star ? <Badge>Star</Badge> : <Badge variant="outline">{CATEGORY_LABEL[item.category]}</Badge>}
-          <span className="text-[15px] font-medium leading-snug">{item.q}</span>
+          <span className="min-w-0 text-[15px] font-medium leading-snug text-pretty">{item.q}</span>
         </div>
-        <p className="mt-2 text-sm text-primary">{item.firstLine}</p>
+        <p className="mt-2 text-sm text-pretty text-primary">{item.firstLine}</p>
       </summary>
-      <div className="mt-4 space-y-3">
+      <div className="mt-4 min-w-0 space-y-3">
         <SpeakBlock>{item.spoken}</SpeakBlock>
         <p className="text-xs text-muted-foreground">If you stall: {item.ifStuck}</p>
       </div>
@@ -64,8 +64,8 @@ export function QuestionsView({ filter }: { filter: (typeof FILTERS)[number] }) 
               prefetch
               className={
                 active
-                  ? "inline-flex h-7 items-center rounded-lg bg-primary px-2.5 text-[0.8rem] font-medium text-primary-foreground"
-                  : "inline-flex h-7 items-center rounded-lg border border-border px-2.5 text-[0.8rem] font-medium text-muted-foreground hover:bg-secondary hover:text-foreground"
+                  ? "inline-flex min-h-11 items-center rounded-lg bg-primary px-3 text-sm font-medium text-primary-foreground"
+                  : "inline-flex min-h-11 items-center rounded-lg border border-border px-3 text-sm font-medium text-muted-foreground hover:bg-secondary hover:text-foreground"
               }
             >
               {f === "star" ? "Starred" : f === "all" ? "All" : CATEGORY_LABEL[f]}

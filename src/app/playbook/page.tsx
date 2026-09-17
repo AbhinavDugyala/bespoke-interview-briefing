@@ -1,4 +1,5 @@
 import { PageShell } from "@/components/page-shell";
+import { StackTable } from "@/components/stack-table";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
@@ -18,35 +19,32 @@ export default function PlaybookPage() {
       lede="You do not need to lecture these lists. You need to recognize the question and answer with one pattern plus one mitigation."
     >
       <section>
-        <h2 className="font-serif text-2xl">
+        <h2 className="font-serif text-xl text-pretty sm:text-2xl">
           Anatomy of a Harbor task
         </h2>
-        <div className="mt-4 overflow-x-auto rounded-xl border border-border">
-          <table className="w-full min-w-[36rem] text-left text-sm">
-            <thead className="bg-secondary/60 text-muted-foreground">
-              <tr>
-                <th className="px-4 py-2 font-medium">File</th>
-                <th className="px-4 py-2 font-medium">Agent sees?</th>
-                <th className="px-4 py-2 font-medium">Job</th>
-              </tr>
-            </thead>
-            <tbody>
-              {HARBOR_ANATOMY.map((row) => (
-                <tr key={row.file} className="border-t border-border">
-                  <td className="px-4 py-2 font-mono text-xs text-primary">{row.file}</td>
-                  <td className="px-4 py-2">
-                    {row.agentSees ? <Badge>Yes</Badge> : <Badge variant="secondary">Hidden</Badge>}
-                  </td>
-                  <td className="px-4 py-2 text-muted-foreground">{row.job}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <div className="mt-4">
+          <StackTable
+            columns={[
+              {
+                key: "file",
+                header: "File",
+                cellClassName: "font-mono text-xs text-primary",
+              },
+              { key: "sees", header: "Agent sees?" },
+              { key: "job", header: "Job", cellClassName: "text-muted-foreground" },
+            ]}
+            rows={HARBOR_ANATOMY.map((row) => ({
+              id: row.file,
+              file: row.file,
+              sees: row.agentSees ? <Badge>Yes</Badge> : <Badge variant="secondary">Hidden</Badge>,
+              job: row.job,
+            }))}
+          />
         </div>
       </section>
 
       <section>
-        <h2 className="font-serif text-2xl">
+        <h2 className="font-serif text-xl text-pretty sm:text-2xl">
           The pipeline you already live in
         </h2>
         <ol className="mt-4 grid gap-2 sm:grid-cols-2">
@@ -63,7 +61,7 @@ export default function PlaybookPage() {
       </section>
 
       <section>
-        <h2 className="font-serif text-2xl">
+        <h2 className="font-serif text-xl text-pretty sm:text-2xl">
           Stump patterns (fair difficulty)
         </h2>
         <p className="mt-1 mb-4 text-sm text-muted-foreground">
@@ -87,7 +85,7 @@ export default function PlaybookPage() {
       </section>
 
       <section>
-        <h2 className="font-serif text-2xl">
+        <h2 className="font-serif text-xl text-pretty sm:text-2xl">
           Five ways a low pass rate is fake
         </h2>
         <div className="mt-4 grid gap-3">
@@ -101,15 +99,17 @@ export default function PlaybookPage() {
       </section>
 
       <section>
-        <h2 className="font-serif text-2xl">
+        <h2 className="font-serif text-xl text-pretty sm:text-2xl">
           Frameworks — what you can claim
         </h2>
         <div className="mt-4 grid gap-3">
           {FRAMEWORKS.map((f) => (
             <Card key={f.name}>
-              <CardHeader className="flex flex-row items-center justify-between gap-3">
-                <CardTitle>{f.name}</CardTitle>
-                <Badge variant="outline">{f.you}</Badge>
+              <CardHeader className="flex flex-col items-start gap-2 sm:flex-row sm:items-center sm:justify-between">
+                <CardTitle className="min-w-0 text-pretty">{f.name}</CardTitle>
+                <Badge variant="outline" className="h-auto max-w-full whitespace-normal py-1">
+                  {f.you}
+                </Badge>
               </CardHeader>
               <CardContent className="text-sm text-muted-foreground">{f.blurb}</CardContent>
             </Card>
@@ -118,7 +118,7 @@ export default function PlaybookPage() {
       </section>
 
       <section>
-        <h2 className="font-serif text-2xl">
+        <h2 className="font-serif text-xl text-pretty sm:text-2xl">
           RL words, in one line each
         </h2>
         <div className="mt-4 grid gap-2 sm:grid-cols-2">

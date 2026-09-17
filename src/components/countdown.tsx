@@ -50,9 +50,9 @@ export function Countdown() {
   }
 
   return (
-    <p className="font-mono text-sm text-muted-foreground">
+    <p className="font-mono text-sm text-pretty text-muted-foreground">
       {INTERVIEW.when} IST ·{" "}
-      <span className="text-foreground">
+      <span className="inline-block text-foreground">
         {t.h}h {String(t.m).padStart(2, "0")}m {String(t.s).padStart(2, "0")}s
       </span>{" "}
       remaining

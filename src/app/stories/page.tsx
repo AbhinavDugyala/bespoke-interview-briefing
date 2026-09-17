@@ -17,7 +17,7 @@ export default function StoriesPage() {
             <Badge>{i === 2 ? "Backup" : `Story ${i + 1}`}</Badge>
             <span className="text-sm text-muted-foreground">{story.whenToUse}</span>
           </div>
-          <h2 className="font-serif text-2xl leading-snug">
+          <h2 className="font-serif text-xl leading-snug text-pretty sm:text-2xl">
             {story.title}
           </h2>
           <p className="text-sm text-primary">{story.subtitle}</p>

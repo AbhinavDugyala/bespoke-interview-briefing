@@ -31,6 +31,8 @@ Open [http://127.0.0.1:43147](http://127.0.0.1:43147). Use the production server
 
 Numbers you type on Tonight stay in **localStorage** on that browser only.
 
+The layout is built for phone, tablet, and desktop: wrapping nav with 44px tap targets, stacked tables on small screens, and no horizontal page scroll. Safe-area insets are respected on notched phones.
+
 ## How to use tonight
 
 1. Fill submitted / accepted task counts and the one task you will narrate.

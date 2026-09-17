@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { PageShell, SpeakBlock } from "@/components/page-shell";
+import { StackTable } from "@/components/stack-table";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MUST_HAVES, NICE_TO_HAVES, TRANSLATION } from "@/lib/content/match";
@@ -7,9 +8,19 @@ import { PROFILE } from "@/lib/content/profile";
 import type { JdItem } from "@/lib/content/match";
 
 function Strength({ strength }: { strength: JdItem["strength"] }) {
-  if (strength === "strong") return <Badge>Strong</Badge>;
-  if (strength === "partial") return <Badge variant="secondary">Partial — be precise</Badge>;
-  return <Badge variant="destructive">Gap — do not fake</Badge>;
+  if (strength === "strong")
+    return <Badge className="h-auto max-w-full whitespace-normal py-1">Strong</Badge>;
+  if (strength === "partial")
+    return (
+      <Badge variant="secondary" className="h-auto max-w-full whitespace-normal py-1">
+        Partial — be precise
+      </Badge>
+    );
+  return (
+    <Badge variant="destructive" className="h-auto max-w-full whitespace-normal py-1">
+      Gap — do not fake
+    </Badge>
+  );
 }
 
 function JdList({ items }: { items: JdItem[] }) {
@@ -17,8 +28,8 @@ function JdList({ items }: { items: JdItem[] }) {
     <div className="grid gap-4">
       {items.map((item) => (
         <Card key={item.jd}>
-          <CardHeader className="flex flex-row items-start justify-between gap-3">
-            <CardTitle className="text-base leading-snug">{item.jd}</CardTitle>
+          <CardHeader className="flex flex-col items-start gap-2 sm:flex-row sm:justify-between">
+            <CardTitle className="min-w-0 text-base leading-snug text-pretty">{item.jd}</CardTitle>
             <Strength strength={item.strength} />
           </CardHeader>
           <CardContent className="space-y-3">
@@ -88,7 +99,7 @@ export default function MatchPage() {
       </Card>
 
       <section>
-        <h2 className="font-serif text-2xl">
+        <h2 className="font-serif text-xl text-pretty sm:text-2xl">
           Must-haves
         </h2>
         <p className="mt-1 mb-4 text-sm text-muted-foreground">
@@ -98,7 +109,7 @@ export default function MatchPage() {
       </section>
 
       <section>
-        <h2 className="font-serif text-2xl">
+        <h2 className="font-serif text-xl text-pretty sm:text-2xl">
           Good-to-haves
         </h2>
         <p className="mt-1 mb-4 text-sm text-muted-foreground">
@@ -108,28 +119,30 @@ export default function MatchPage() {
       </section>
 
       <section>
-        <h2 className="font-serif text-2xl">
+        <h2 className="font-serif text-xl text-pretty sm:text-2xl">
           Speak Bespoke, not only Dynamo
         </h2>
-        <div className="mt-4 overflow-x-auto rounded-xl border border-border">
-          <table className="w-full min-w-[32rem] text-left text-sm">
-            <thead className="bg-secondary/60 text-muted-foreground">
-              <tr>
-                <th className="px-4 py-2 font-medium">You already say</th>
-                <th className="px-4 py-2 font-medium">Say it this way tonight</th>
-              </tr>
-            </thead>
-            <tbody>
-              {TRANSLATION.map((row) => (
-                <tr key={row.dynamo} className="border-t border-border">
-                  <td className="px-4 py-2 font-mono text-xs text-primary">
-                    {row.dynamo}
-                  </td>
-                  <td className="px-4 py-2 text-muted-foreground">{row.bespoke}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <div className="mt-4">
+          <StackTable
+            minWidthClass="min-w-[32rem]"
+            columns={[
+              {
+                key: "dynamo",
+                header: "You already say",
+                cellClassName: "font-mono text-xs text-primary",
+              },
+              {
+                key: "bespoke",
+                header: "Say it this way tonight",
+                cellClassName: "text-muted-foreground",
+              },
+            ]}
+            rows={TRANSLATION.map((row) => ({
+              id: row.dynamo,
+              dynamo: row.dynamo,
+              bespoke: row.bespoke,
+            }))}
+          />
         </div>
       </section>
     </PageShell>

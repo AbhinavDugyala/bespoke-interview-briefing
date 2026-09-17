@@ -50,20 +50,20 @@ export function DrillClient() {
             Answer out loud, then reveal.
           </div>
         )}
-        <div className="mt-6 flex flex-wrap gap-2">
-          <Button onClick={() => setRevealed(true)} disabled={revealed}>
+        <div className="mt-6 flex flex-col gap-2 sm:flex-row sm:flex-wrap">
+          <Button className="min-h-11 w-full sm:w-auto" onClick={() => setRevealed(true)} disabled={revealed}>
             Reveal
           </Button>
-          <Button variant="outline" onClick={next}>
+          <Button variant="outline" className="min-h-11 w-full sm:w-auto" onClick={next}>
             Next
           </Button>
         </div>
       </div>
 
       <div className="rounded-2xl border border-border p-5">
-        <div className="flex flex-wrap items-center justify-between gap-3">
+        <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">
           <h3 className="font-serif text-lg">Opener timer</h3>
-          <Button variant="secondary" onClick={() => setOpener((v) => !v)}>
+          <Button variant="secondary" className="min-h-11 w-full sm:w-auto" onClick={() => setOpener((v) => !v)}>
             {opener ? "Hide script" : "Show script"}
           </Button>
         </div>

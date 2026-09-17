@@ -30,7 +30,7 @@ export default function HomePage() {
 
       <SpeakBlock label="90-second opener — memorize this">{NINETY_SECOND_OPENER}</SpeakBlock>
 
-      <div className="grid gap-4 md:grid-cols-3">
+      <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
         {TONIGHT_PLAN.map((block) => (
           <Card key={block.when}>
             <CardHeader>
@@ -46,7 +46,7 @@ export default function HomePage() {
       <NumbersPanel />
 
       <section>
-        <h2 className="font-serif text-2xl">
+        <h2 className="font-serif text-xl text-pretty sm:text-2xl">
           Sentences you should be able to say without notes
         </h2>
         <div className="mt-4 grid gap-3">
@@ -96,7 +96,7 @@ export default function HomePage() {
       </div>
 
       <section>
-        <h2 className="font-serif text-2xl">Range — two minutes each, then back</h2>
+        <h2 className="font-serif text-xl text-pretty sm:text-2xl">Range — two minutes each, then back</h2>
         <p className="mt-1 mb-4 text-sm text-muted-foreground">{PROJECTS_RULE}</p>
         <div className="grid gap-4 md:grid-cols-2">
           {PROJECTS.map((project) => (

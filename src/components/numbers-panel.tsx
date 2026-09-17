@@ -84,14 +84,14 @@ export function NumbersPanel() {
           value={stats[key]}
           placeholder={placeholder}
           onChange={(e) => setField(key, e.target.value)}
-          className="min-h-20 bg-background/60"
+          className="min-h-20 bg-background/60 text-base"
         />
       ) : (
         <Input
           value={stats[key]}
           placeholder={placeholder}
           onChange={(e) => setField(key, e.target.value)}
-          className="bg-background/60"
+          className="min-h-11 bg-background/60 text-base"
         />
       )}
     </label>

@@ -12,7 +12,7 @@ export default function GapsPage() {
       <SpeakBlock label="Closing line if they ask 'anything else?'">{CLOSE}</SpeakBlock>
 
       <section>
-        <h2 className="font-serif text-2xl">
+        <h2 className="font-serif text-xl text-pretty sm:text-2xl">
           Gaps — handle, do not hide
         </h2>
         <div className="mt-4 grid gap-3">
@@ -28,7 +28,7 @@ export default function GapsPage() {
       </section>
 
       <section>
-        <h2 className="font-serif text-2xl">
+        <h2 className="font-serif text-xl text-pretty sm:text-2xl">
           Ask them — pick three
         </h2>
         <div className="mt-4 grid gap-3">
@@ -42,7 +42,7 @@ export default function GapsPage() {
       </section>
 
       <section>
-        <h2 className="font-serif text-2xl">
+        <h2 className="font-serif text-xl text-pretty sm:text-2xl">
           Last hour
         </h2>
         <ol className="mt-4 list-decimal space-y-2 pl-5 text-sm leading-relaxed text-muted-foreground">

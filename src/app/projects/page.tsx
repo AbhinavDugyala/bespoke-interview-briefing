@@ -16,7 +16,7 @@ export default function ProjectsPage() {
             <Badge>{project.kind === "fullstack" ? "Full stack" : "ML research"}</Badge>
             <span className="text-sm text-muted-foreground">{project.when}</span>
           </div>
-          <h2 className="font-serif text-2xl leading-snug">{project.title}</h2>
+          <h2 className="font-serif text-xl leading-snug text-pretty sm:text-2xl">{project.title}</h2>
           <p className="text-sm text-primary">{project.whenToUse}</p>
           <p className="text-sm leading-relaxed text-muted-foreground">{project.oneLiner}</p>
           <div className="flex flex-wrap gap-1.5">
@@ -52,12 +52,12 @@ export default function ProjectsPage() {
               </div>
             ))}
           </div>
-          <div className="flex flex-wrap gap-3 text-sm">
+          <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             {project.links.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-primary underline-offset-4 hover:underline"
+                className="inline-flex min-h-11 items-center break-words text-primary underline-offset-4 hover:underline"
                 target="_blank"
                 rel="noreferrer"
               >
